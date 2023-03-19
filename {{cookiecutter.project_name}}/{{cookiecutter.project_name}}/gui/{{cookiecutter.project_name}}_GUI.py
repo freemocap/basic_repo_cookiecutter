@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         self._layout.addWidget(self.folder_open_button)
         self.folder_open_button.clicked.connect(self._open_session_folder_dialog)
 
-        self.run_button = RunButtonWidget()
+        self.run_button = RunButtonWidget(self)
         self._layout.addWidget(self.run_button)
 
     def _open_session_folder_dialog(self):
