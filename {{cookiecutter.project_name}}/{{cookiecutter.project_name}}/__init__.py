@@ -1,7 +1,7 @@
 """Top-level package for basic_template_repo."""
 
 __package_name__ = "{{cookiecutter.project_name}}"
-__version__ = "v2023.01.1004"
+__version__ = "v0.1.0"
 
 __author__ = """{{cookiecutter.author}}"""
 __email__ = "{{cookiecutter.email}}"
@@ -22,6 +22,7 @@ sys.path.insert(0, str(base_package_path))  # add parent directory to sys.path
 
 from {{cookiecutter.project_name}}.system.default_paths import get_log_file_path
 from {{cookiecutter.project_name}}.system.logging_configuration import configure_logging
+
 
 
 configure_logging(log_file_path=get_log_file_path())
