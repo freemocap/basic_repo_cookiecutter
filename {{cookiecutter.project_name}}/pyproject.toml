@@ -25,7 +25,9 @@ keywords = ["basic",
             "python",
             "repository"] #change these to your project keywords
 
-dependencies = ["pytest", "PyQt6] #add additional dependencies here - try to pin versions as minimally as possible
+dependencies = ["pytest",
+                "PyQt6",
+                "rich"] #add additional dependencies here - try to pin versions as minimally as possible
 
 requires-python = ">=3.8"
 
@@ -35,8 +37,8 @@ dynamic = ["version"]
 dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
 
 [tool.bumpver] #bump the version by entering `bumpver update` in the terminal
-current_version = "{{cookiecutter.project_version}}"
-version_pattern = "vYYYY.0M.BUILD[-TAG]"
+current_version = "v0.1.0"
+version_pattern = "vMAJOR.MINOR.PATCH[-TAG]"
 commit_message  = "Bump version {old_version} -> {new_version}"
 commit          = true
 tag             = true
@@ -49,3 +51,4 @@ push            = true
 
 [project.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.project_name}}.__main__:main"
+{{cookiecutter.project_name}}-gui = "{{cookiecutter.project_name}}.gui.gui:run_gui_window"

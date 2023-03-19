@@ -1,6 +1,11 @@
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton
+import logging
+
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel
+
+from {{cookiecutter.project_name}}.{{cookiecutter.project_name}}_run_me import run_me
 
 
+logger = logging.getLogger(__name__)
 class RunButtonWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -16,5 +21,5 @@ class RunButtonWidget(QWidget):
         self.run_button_widget.clicked.connect(self.run_script)
 
     def run_script(self):
-        print(f"Running a print statement from - {__file__} - wow!!\n
-        "Put your code here, and it will run when that button is pressed :D")     
+        logger.info(f"Clicked on the run button, running {run_me} (this is being generated from the file at: {__file__}")
+        run_me()
