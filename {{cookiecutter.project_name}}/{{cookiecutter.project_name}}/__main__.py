@@ -10,10 +10,10 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from {{cookiecutter.project_name}}_run_me import run_me
+from gui.gui import run_gui_window
 
 def main():
-    run_me()
+    run_gui_window()
 
 if __name__ == '__main__':
     logger.info(f"Running as a script")
