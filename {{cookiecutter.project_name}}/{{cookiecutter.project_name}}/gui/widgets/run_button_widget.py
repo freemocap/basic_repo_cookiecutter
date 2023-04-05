@@ -11,14 +11,16 @@ class RunButtonWidget(QWidget):
         super().__init__(parent=parent)
 
         self._layout = QVBoxLayout()
-        self.setLayout = self._layout
 
-        self._title = QLabel("The code for this widget is defined in the file: {__file__}")
+        self._title = QLabel(f"The code for this widget is defined in the file: {__file__}")
         self._layout.addWidget(self._title)
         
         self.run_button_widget = QPushButton('Run',self)
+        self._layout.addWidget(self.run_button_widget)
 
         self.run_button_widget.clicked.connect(self.run_script)
+
+        self.setLayout(self._layout)
 
     def run_script(self):
         logger.info(f"Clicked on the run button, running {run_me} (this is being generated from the file at: {__file__}")
